@@ -59,7 +59,11 @@ open class Device {
             case "iPhone14,8":                               return .iPhone14Plus
             case "iPhone15,2":                               return .iPhone14Pro
             case "iPhone15,3":                               return .iPhone14Pro_Max
-
+            case "iPhone15,4":                               return .iPhone15
+            case "iPhone15,5":                               return .iPhone15Plus
+            case "iPhone16,1":                               return .iPhone15Pro
+            case "iPhone16,2":                               return .iPhone15Pro_Max
+            
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .iPad2
@@ -238,6 +242,8 @@ open class Device {
 extension Device {
     static public var hasDynamicIsland: Bool {
         switch version() {
+        case .iPhone15,.iPhone15Plus, .iPhone15Pro,.iPhone15Pro_Max:
+            return true
         case .iPhone14Pro, .iPhone14Pro_Max:
             return true
         case .iPhone2G:
